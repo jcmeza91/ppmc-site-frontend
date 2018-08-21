@@ -1,0 +1,67 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-12 col-xs-12 col-sm-12 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Inventarios</label>        
+        </div> 
+    </div>
+</div><br>
+
+<table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Rpt Maq Id</th>
+            <th>Id Viaje</th>
+            <th>Fecha</th>
+            <th>Id de Reporte</th>
+            <th>Fecha de Reporte</th>
+            <th>Planta</th>
+            <th>Proveedor</th>
+            <th>Lugar</th>
+            <th>Lote</th>
+            <th>Tipo</th>
+            <th>Unidad</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="12">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.inventoryId}}</td>
+            <td>{{x.inventoryTripId}}</td>			
+            <td>{{x.inventoryDate | date : "EEEE, MMMM d, y"}}</td>
+            <td>{{x.inventoryReportId}}</td>
+            <td>{{x.inventoryReportDate | date : "EEEE, MMMM d, y"}}</td>
+            <td>{{x.inventoryPlant}}</td>
+            <td>{{x.inventorySupplier}}</td>
+            <td>{{x.inventoryPlace}}</td>
+            <td>{{x.inventoryLot}}</td>
+            <td>{{x.inventoryPackageType}}</td>
+            <td>{{x.inventoryPackageUnit}}</td>
+
+            <td>
+                <button type="button" ng-click="edit(x);" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                </button>
+
+                <button type="button" ng-click="delete(x,$index)" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

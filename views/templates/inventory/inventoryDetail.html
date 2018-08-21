@@ -1,0 +1,114 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Reporte de Maquila</label>        
+        </div>
+    </div>
+</div><br>
+
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryId">Rpt Maq Id: {{item.inventoryId}}</label>
+       	    </div>
+       	    
+       	    <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+           	    <label for="inventoryTripId">Id de Viaje: {{item.inventoryTripId}}</label>
+       	    </div>
+       		 
+       	    <div class="col-md-5 col-xs-12 col-sm-12 titulo">
+           	    <label for="inventoryDate">Fecha: {{item.inventoryDate | date : "EEEE, MMMM d, y"}}</label>
+       	    </div>
+        </div>
+    </div>
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryReportId">Reporte: {{item.inventoryReportId}}</label>
+            </div>  
+        		   
+   	        <div class="col-md-3 col-xs-6 col-sm-6 titulo">   
+   	            <label for="inventoryReportDate">Fecha de Reporte: {{item.inventoryReportDate | date : "EEEE, MMMM d, y"}}</label>
+       	    </div> 
+       	    
+       	    <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPlant">Planta: {{item.inventoryPlant}}</label>
+            </div>   
+         
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventorySupplier">Proveedor: {{item.inventorySupplier}}</label>
+            </div> 
+        </div>
+    </div> 
+       
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPlace">Lugar: {{item.inventoryPlace}}</label>
+            </div>   
+             
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryLot">Lote: {{item.inventoryLot}}</label>
+            </div> 
+            
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPackageType">Tipo: {{item.inventoryPackageType}}</label>
+            </div>   
+        
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPackageUnit">Unidad: {{item.inventoryPackageUnit}}</label>
+            </div>   
+        </div>
+    </div> 
+       
+</form>
+
+<br><br><table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Inventario</th>
+            <th>Marca</th>
+            <th>Cantidad</th>
+            <th>Inventario</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="6">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.inventoryDetailId}}</td>
+            <td>{{x.inventoryDetailSpecieId}}</td>			
+            <td>{{x.inventoryDetailAmount}}</td>
+            <td>{{x.inventoryDetailAmountLeft}}</td>
+
+            <td>
+                <button type="button" ng-click="edit(x);" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-usd">Vender</i>
+                </button>
+
+                <button type="button" ng-click="delete(x,$index)" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"> Borrar</i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

@@ -1,0 +1,89 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Edición de Inventario</label>
+        </div>
+    </div>
+</div><br>
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="inventoryTripId">Id de Viaje</label>
+          	     <input ng-model="item.inventoryTripId" type="text" placeholder="Id de Viaje" id="inventoryTripId" class="form-control"/>
+       	    </div>
+       		 
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="inventoryDate">Fecha</label>
+          	     <input ng-model="item.inventoryDate" type="date" placeholder="Fecha" id="inventoryDate" class="form-control"/>
+       	    </div>
+        </div>
+    </div>
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryReportId">Id de Reporte</label>
+                <input ng-model="item.inventoryReportId" type="text" placeholder="Id de Reporte" id="inventoryReportId" class="form-control"/>
+            </div>  
+        		   
+   	        <div class="col-md-6 col-xs-12 col-sm-12 titulo">   
+   	            <label for="inventoryReportDate">Fecha de Reporte</label>
+                <input ng-model="item.inventoryReportDate" type="text" placeholder="Fecha de Reporte" id="inventoryReportDate" class="form-control"/>
+       	    </div>  
+        </div>	
+    </div> 
+       
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryPlant">Planta</label>
+                <input ng-model="item.inventoryPlant" type="text" placeholder="Planta" id="inventoryPlant" class="form-control"/>
+            </div>   
+         
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventorySupplier">Proveedor</label>
+                <input ng-model="item.inventorySupplier" type="text" placeholder="Proveedor" id="inventorySupplier" class="form-control"/>
+            </div>   
+        </div>
+    </div>
+    
+     <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryPlace">Lugar</label>
+                <input ng-model="item.inventoryPlace" type="text" placeholder="Lugar" id="inventoryPlace" class="form-control"/>
+            </div>   
+             
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryLot">Lote</label>
+                <input ng-model="item.inventoryLot" type="text" placeholder="Lote" id="inventoryLot" class="form-control"/>
+            </div>   
+        </div>
+    </div> 
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryPackageType">Tipo</label>
+                <input ng-model="item.inventoryPackageType" type="text" placeholder="Tipo" id="inventoryPackageType" class="form-control"/>
+            </div>   
+        
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryPackageUnit">Unidad</label>
+                <input ng-model="item.inventoryPackageUnit" type="text" placeholder="Unidad" id="inventoryPackageUnit" class="form-control"/>
+            </div>   
+        </div>
+    </div>     
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <button ng-click="update(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">GUARDAR</button>
+            </div>   
+        </div>
+    </div>       
+
+</form>

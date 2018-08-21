@@ -1,0 +1,97 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-12 col-xs-12 col-sm-12 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Asignados</label>        
+        </div> 
+    </div>
+</div><br>
+   
+<table st-table="crewList" st-safe-src="crewList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Viaje</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="8">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in crewList">
+            <td>{{x.crewTripId}}</td>
+            <td>{{x.crewEmployeeId}}</td>			
+            <td>{{x.crewRoleId}}</td>	
+            <td>
+                <button type="button" ng-click="delete(x,$index);" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"> Borrar</i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>
+   
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-12 col-xs-12 col-sm-12 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Disponibles</label>        
+        </div> 
+    </div>
+</div><br>
+
+<table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="8">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.employeeId}}</td>
+            <td>{{x.employeeName}}</td>			
+            <td>
+                <select ng-model='roles$index' required ng-options='option.roleId as option.roleName for option in options'>
+                    <option value="">Rol</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" ng-click="add(x,roles$index);" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-plus">Agregar</i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

@@ -1,0 +1,57 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Edición de Venta</label>
+        </div>
+    </div>
+</div><br>
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="saleInventoryDetailId">Id Detalle de Inventario</label><br>
+          	     <select ng-model='item.saleInventoryDetailId' required ng-options='option.inventoryDetailId as option.inventoryDetailInventoryId for option in options1'></select>
+       	    </div>
+       		 
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="saleClientId">Cliente</label><br>
+          	     <select ng-model='item.saleClientId' required ng-options='option.clientId as option.clientName for option in options2'></select>
+       	    </div>
+        </div>
+    </div>  
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="saleAmount">Cantidad</label>
+                <input ng-model="item.saleAmount" type="text" placeholder="Cantidad" id="saleAmount" class="form-control"/>
+            </div>  
+        		   
+   	        <div class="col-md-6 col-xs-12 col-sm-12 titulo">   
+   	            <label for="salePrice">Precio</label>
+                <input ng-model="item.salePrice" type="text" placeholder="Precio" id="salePrice" class="form-control"/>
+       	    </div>  
+        </div>	
+    </div> 
+       
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="saleDate">Fecha</label>
+                <input ng-model="item.saleDate" type="text" placeholder="Fecha" id="saleDate" class="form-control"/>
+            </div>   
+        </div>
+        	
+    </div>
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <button ng-click="update(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">GUARDAR</button>
+            </div>   
+        </div>
+    </div>       
+
+</form>

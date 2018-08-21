@@ -1,0 +1,204 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Reporte de Maquila</label>        
+        </div>
+    </div>
+</div><br>
+
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryId"><b>Rpt Maq Id: </b>{{item.inventoryId}}</label>
+       	    </div>
+       	    
+       	    <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+           	    <label for="inventoryTripId"><b>Id de Viaje: </b>{{item.inventoryTripId}}</label>
+       	    </div>
+       		 
+       	    <div class="col-md-5 col-xs-12 col-sm-12 titulo">
+           	    <label for="inventoryDate"><b>Fecha: </b>{{item.inventoryDate | date : "EEEE, MMMM d, y"}}</label>
+       	    </div>
+        </div>
+    </div><br>
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryReportId">Reporte</label>
+                <input ng-model="item.inventoryReportId" type="text" placeholder="Reporte" id="inventoryReportId" class="form-control"/>
+            </div>  
+        		   
+   	        <div class="col-md-3 col-xs-6 col-sm-6 titulo">   
+   	            <label for="inventoryReportDate">Fecha de Reporte</label>
+                <input ng-model="item.inventoryReportDate" type="date" placeholder="Fecha de Reporte" id="inventoryReportDate" class="form-control"/>
+       	    </div> 
+       	    
+       	    <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPlant">Planta</label>
+                <input ng-model="item.inventoryPlant" type="text" placeholder="Planta" id="inventoryPlant" class="form-control"/>
+            </div>   
+         
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventorySupplier">Proveedor</label>
+                <input ng-model="item.inventorySupplier" type="text" placeholder="Proveedor" id="inventorySupplier" class="form-control"/>
+            </div> 
+        </div>
+    </div> 
+       
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPlace">Lugar</label>
+                <input ng-model="item.inventoryPlace" type="text" placeholder="Lugar" id="inventoryPlace" class="form-control"/>
+            </div>   
+             
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryLot">Lote</label>
+                <input ng-model="item.inventoryLot" type="text" placeholder="Lote" id="inventoryLot" class="form-control"/>
+            </div> 
+            
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPackageType">Tipo</label><br>
+                <select ng-model='item.inventoryPackageType' required ng-options='option.name as option.name for option in tipo'></select>
+            </div>   
+        
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="inventoryPackageUnit">Unidad</label><br>
+                <select ng-model='item.inventoryPackageUnit' required ng-options='option.name as option.name for option in unidad'></select>
+            </div>   
+        </div>
+    </div> 
+    
+    <br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-12 col-xs-12 col-sm-12 titulo">
+                <button ng-click="update(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">ACTUALIZAR</button>
+            </div>   
+        </div>
+    </div>
+       
+</form>  
+    
+<br><form id="registro-form">         
+    <div class="row content">
+        <div class="container-fluid">
+           <div class="col-md-2 col-xs-6 col-sm-4 titulo">
+                <select name="inventoryDetailSpecieId" ng-model="data.inventoryDetailSpecieId">
+                    <option ng-repeat="option in especie" ng-value="option.specieId">{{option.specieDesc}}</option>
+                </select>
+            </div>   
+             
+            <div class="col-md-2 col-xs-6 col-sm-4 titulo">
+                <input ng-model="data.inventoryDetailAmount" type="number" placeholder="Cantidad" id="inventoryDetailAmount" class="form-control"/>
+            </div>
+            
+             <div class="col-md-2 col-xs-6 col-sm-4 titulo">
+                <button ng-click="add(data)" ng-disabled="!(!!data)" class="btn btn-sig pull-left" type="button">AGREGAR</button>
+            </div>  
+        </div>
+    </div> 
+</form> 
+
+<br><form name="sale-form">
+   <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-12 col-xs-12 col-sm-12 intop">
+                <label>
+                    <input type="radio" ng-model="sale.type" value="0"> Vender Parcialmente
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-12 col-xs-12 col-sm-12 intop">
+                <label>
+                    <input type="radio" ng-model="sale.type" value="1"> Vender Todo
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <br><div class="row content" ng-show="sale.type == 1">
+        <div class="container-fluid">
+          <div class="col-md-3 col-xs-4 col-sm-4 titulo">   
+   	            <label for="saleClientId">Cliente</label><br>
+           	    <select ng-model='sale.saleClientId' required ng-options='option.clientId as option.clientName for option in clientes'></select>
+       	    </div> 
+           <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <label for="saleClientId">Precio</label>
+                <input ng-model="sale.price" type="number" placeholder="Precio" id="price" class="form-control"/>
+            </div>          
+            <div class="col-md-3 col-xs-6 col-sm-6 titulo">
+                <br><button ng-click="totalSale(sale)" class="btn btn-sig pull-left" type="button">VENDER</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<br><br><table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Inventario</th>
+            <th>Marca</th>
+            <th>Cantidad</th>
+            <th>Inventario</th>
+            <th colspan="4" ng-show="sale.type == 0">Datos de venta</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="9">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.inventoryDetailId}}</td>
+            <td>{{x.inventoryDetailSpecieId}}</td>			
+            <td>{{x.inventoryDetailAmount}}</td>
+            <td>{{x.inventoryDetailAmountLeft}}</td>
+            
+            
+            <td ng-show="sale.type == 0">
+                <select ng-model='client$index' required ng-options='option.clientId as option.clientName for option in clientes'>
+                    <option value="">Cliente</option>
+                </select>
+            </td>
+            <td ng-show="sale.type == 0">
+                <input ng-model="amount$index" type="number" placeholder="Cantidad" id="amount$index" class="form-control"/>
+            </td>
+            <td ng-show="sale.type == 0">
+                <input ng-model="price$index" type="number" placeholder="Precio" id="price$index" class="form-control"/>
+            </td>
+            <td ng-show="sale.type == 0">
+                <button type="button" ng-click="saleProduct(x,client$index,amount$index,price$index,$index)" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-usd"> Vender</i>
+                </button>
+            </td>
+            
+            <td>
+                <button type="button" ng-click="delete(x,$index)" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"> Borrar</i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

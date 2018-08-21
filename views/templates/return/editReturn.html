@@ -1,0 +1,47 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Edición de Devolución</label>
+        </div>
+    </div>
+</div><br>
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="returnsSaleId">Id de Venta</label>
+          	     <input ng-model="item.returnsSaleId" type="text" placeholder="Id de Venta" id="returnsSaleId" class="form-control"/>
+       	    </div>
+       		 
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="returnsAmount">Cantidad</label>
+          	     <input ng-model="item.returnsAmount" type="text" placeholder="Cantidad" id="returnsAmount" class="form-control"/>
+       	    </div>
+        </div>
+    </div>
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="returnsDate">Fecha</label>
+                <input ng-model="item.returnsDate" type="text" placeholder="Fecha" id="returnsDate" class="form-control"/>
+            </div>  
+        		   
+   	        <div class="col-md-6 col-xs-12 col-sm-12 titulo">   
+   	            <label for="returnsComment">Comentario</label>
+                <input ng-model="item.returnsComment" type="text" placeholder="Comentario" id="returnsComment" class="form-control"/>
+       	    </div>  
+        </div>	
+    </div>    
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <button ng-click="update(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">GUARDAR</button>
+            </div>   
+        </div>
+    </div>       
+
+</form>

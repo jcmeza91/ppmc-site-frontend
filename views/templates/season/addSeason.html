@@ -1,0 +1,35 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Alta de Temporada</label>        
+        </div>
+    </div>
+</div><br>
+
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="seasonName">NOMBRE</label>
+          	     <input ng-model="item.seasonName" type="text" placeholder="Nombre" id="seasonName" class="form-control"/>
+       	    </div>
+       		 
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="seasonDate">FECHA</label>
+          	     <input ng-model="item.seasonDate" type="date" placeholder="Fecha" id="seasonDate" class="form-control"/>
+       	    </div>
+        </div>
+    </div> 
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-12 col-xs-12 col-sm-12 titulo">
+                <button ng-click="add(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">GUARDAR</button>
+            </div>   
+        </div>
+    </div> 
+       
+</form>  
+    

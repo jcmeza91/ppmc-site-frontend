@@ -1,0 +1,55 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-12 col-xs-12 col-sm-12 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Devoluciones</label>        
+        </div> 
+    </div>
+</div><br>
+
+<table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Devolución</th>
+            <th>Id Venta</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Comentario</th>
+            <!--<th></th>-->
+        </tr>
+        
+        <tr>	
+            <th colspan="6">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.returnsId}}</td>
+            <td>{{x.returnsSaleId}}</td>			
+            <td>{{x.returnsAmount}}</td>
+            <td>{{x.returnsDate | date : "EEEE, MMMM d, y"}}</td>
+            <td>{{x.returnsComment}}</td>
+
+            <!--<td>
+                <button type="button" ng-click="edit(x);" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+
+                <button type="button" ng-click="delete(x,$index)" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </td>-->	
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

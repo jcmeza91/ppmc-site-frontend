@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'pjdev'>
+	<head>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <title>PPCM</title>
+	    <link rel="shortcut icon" type="image/png" href="./images/logo head.png"/>
+		<link rel="stylesheet" href="./css/w3.css" />
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/styles.css" />
+	    <link href="css/angular-material.css" rel="stylesheet">
+
+	    <style>
+	        [ng-cloak] {
+	            display: none;
+	        }
+	    </style>
+	</head>
+
+	<body ng-cloak>
+       
+        <!-- Header 
+        <div id = "header"></div>-->
+        <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776; PPMC</button>
+            <button id="closeNav" class="w3-button w3-teal w3-xlarge" onclick="w3_close()" style="display: none">&#9776; PPMC</button>
+            <div class="item w3-container">
+            </div>
+        </div>
+            
+        <!-- Menu -->    
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+            <!--<button class="w3-bar-item w3-button w3-large" onclick="w3_close()"><i class="glyphicon glyphicon-remove"></i>Cerrar</button>-->
+            <a href="#/clientes" onclick="w3_close()" class="menuButton w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-user"></i> Clientes
+            </a>
+            <a href="#/tripulaciones" onclick="w3_close()" class="menuButton w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-list-alt"></i> Tripulaciones
+            </a>
+            <a href="#/empleados" onclick="w3_close()" class="menuButton w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-user"></i> Empleados
+            </a>
+            <a href="#/inventarios" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-book"></i> Inventario
+            </a>
+            <a href="#/detalleInventarios" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-info-sign"></i> Detalle de
+                <br>&nbsp; &nbsp; &nbsp;Inventario
+            </a>
+            <a href="#/precios" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-usd"></i> Precios
+            </a>
+            <a href="#/devoluciones" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-refresh"></i> Devoluciones
+            </a>
+            <a href="#/roles" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-modal-window"></i> Roles
+            </a>
+            <a href="#/ventas" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-credit-card"></i> Ventas
+            </a>
+            <a href="#/barcos" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-king"></i> Barcos
+            </a>
+            <a href="#/especies" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-text-background"></i> Especies
+            </a>
+            <a href="#/temporadas" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-time"></i> Temporadas
+            </a>
+            <a href="#/viaje" onclick="w3_close()" class="w3-bar-item w3-button">
+                <i class="glyphicon glyphicon-calendar"></i> Viajes
+            </a>
+        </div>
+        <!-- End Menu --> 
+        
+        <div id="main">
+            <!-- Error and Success messages -->
+            <div id = "alert_placeholder"></div>
+            <div id = "alert_success"></div>
+            
+            <!-- Body of the Application -->
+            <div ng-view>
+            </div>	
+
+        </div>
+
+        <script data-main="js/boot" src="bower_components/requirejs/require.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script>
+        function w3_open() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("mySidebar").style.width = "25%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+          document.getElementById("closeNav").style.display = 'inline-block';
+        }
+        function w3_open_Mob() {
+          document.getElementById("main").style.marginLeft = "50%";
+          document.getElementById("mySidebar").style.width = "50%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+          document.getElementById("closeNav").style.display = 'inline-block';
+        }
+        function w3_close() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+          document.getElementById("closeNav").style.display = 'none';
+        }
+        </script>
+		
+	</body>
+
+	
+</html>

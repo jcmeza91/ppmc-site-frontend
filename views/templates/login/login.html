@@ -1,0 +1,30 @@
+
+<div class="container container-table">  		
+    <div class="row vertical-center-row">
+        <div class="wrap col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 bg-log">
+            <div class="col-lg-6">
+				<img src="./images/Logo_bco_login.png" alt="logo" class="img-responsive center-block logo" />				
+            </div>
+            <div class="col-lg-6">
+				<form  name="formTest" ng-class="{'submitted': submitted}" ng-submit="clickLogin(login);" >
+  		            <div class="form-group">
+    				    <label for="usuario">Usuario * </label>
+    				    <input ng-model="login.usuario" type="text" class="form-control" id="usuario" placeholder="Usuario" required/>
+  		            </div>
+  		            <div class="form-group">
+    				    <label for="contraseña">Contraseña *</label>
+    				    <input ng-model="login.password" type="password" class="form-control" id="password" placeholder="**********" required/>
+  		            </div>
+  		            <button ng-click="submitted= true;" ng-disabled="!(!!login)" class="btn btn-sig pull-right" type="submit">Entrar</button>
+				</form>									
+            </div>  			
+  		</div>
+    </div>
+</div>
+
+<style>
+	    .submitted .ng-invalid{
+        border: 1px solid red;
+    }
+    	
+</style>

@@ -1,0 +1,53 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-12 col-xs-12 col-sm-12 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Ventas</label>        
+        </div> 
+    </div>
+</div><br>
+
+<table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Venta</th>
+            <th>Rpt Maq Id</th>
+            <th>Cliente</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha</th>
+            <th></th>
+        </tr>
+        
+        <tr>	
+            <th colspan="8">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.saleId}}</td>
+            <td>{{x.saleInventoryDetailId}}</td>			
+            <td>{{x.saleClientId}}</td>
+            <td>{{x.saleAmount}}</td>
+            <td>{{x.salePrice}}</td>
+            <td>{{x.saleDate | date : "EEEE, MMMM d, y"}}</td>
+
+            <td>
+                <button type="button" ng-click="return(x,$index);" class="btn btn-sm btn-primary">
+                    <i>Devolución</i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

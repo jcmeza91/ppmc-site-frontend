@@ -1,0 +1,197 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Edición del Barco {{item.shipName}}</label>
+        </div>
+    </div>
+</div><br>
+
+<form id="registro-form2">    
+         
+    <div class="row content">  
+        <div class="container-fluid">          
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="shipName">Nombre</label>
+          	     <input ng-model="item.shipName" type="text" placeholder="Nombre" id="shipName" class="form-control"/>
+       	    </div>
+       	    
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="shipAnoConstruccion">Año</label>
+          	     <input ng-model="item.shipAnoConstruccion" type="text" placeholder="Año" id="shipAnoConstruccion" class="form-control"/>
+       	    </div>
+        </div>
+    </div> 
+        
+    <div class="row content">  
+        <div class="container-fluid">   
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+           	    <label for="shipEslora">Eslora</label>
+          	     <input ng-model="item.shipEslora" type="text" placeholder="Eslora" id="shipEslora" class="form-control"/>
+       	    </div>
+       	    
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipManga">Manga</label>
+                <input ng-model="item.shipManga" type="text" placeholder="Manga" id="shipManga" class="form-control"/>
+            </div>
+        </div>
+    </div>
+   	   
+    <div class="row content">
+        <div class="container-fluid"> 
+   	        <div class="col-md-6 col-xs-12 col-sm-12 titulo">   
+   	            <label for="shipPuntal">Puntual</label>
+                <input ng-model="item.shipPuntal" type="text" placeholder="Puntual" id="shipPuntal" class="form-control"/>
+       	    </div>  
+       	    
+       	    <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipTonBrutas">Ton Brutas</label>
+                <input ng-model="item.shipTonBrutas" type="text" placeholder="Ton Brutas" id="shipTonBrutas" class="form-control"/>
+            </div> 
+        </div>	
+    </div> 
+       
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipTonNetas">Ton Netas</label>
+                <input ng-model="item.shipTonNetas" type="text" placeholder="Ton Netas" id="shipTonNetas" class="form-control"/>
+            </div>  
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipCapAcarreo">Cap Acarreo</label>
+                <input ng-model="item.shipCapAcarreo" type="text" placeholder="Cap Acarreo" id="shipCapAcarreo" class="form-control"/>
+            </div>   
+        </div>
+    </div>
+    
+     <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipCapBodega">Cap Bodega</label>
+                <input ng-model="item.shipCapBodega" type="text" placeholder="Cap Bodega" id="shipCapBodega" class="form-control"/>
+            </div> 
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="inventoryPackageType">Tipo</label>
+                <input ng-model="item.inventoryPackageType" type="text" placeholder="Tipo" id="inventoryPackageType" class="form-control"/>
+            </div>  
+        </div>
+    </div> 
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipSisConservacion">Conservación</label>
+                <input ng-model="item.shipSisConservacion" type="text" placeholder="Conservación" id="shipSisConservacion" class="form-control"/>
+            </div>
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipCalado">Calado</label>
+                <input ng-model="item.shipCalado" type="text" placeholder="Calado" id="shipCalado" class="form-control"/>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipMotorSerie">Serie Motor</label>
+                <input ng-model="item.shipMotorSerie" type="text" placeholder="Serie Motor" id="shipMotorSerie" class="form-control"/>
+            </div>
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipMotorModelo">Modelo Motor</label>
+                <input ng-model="item.shipMotorModelo" type="text" placeholder="Modelo Motor" id="shipMotorModelo" class="form-control"/>
+            </div>      
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipMotorMarca">Marca Motor</label>
+                <input ng-model="item.shipMotorMarca" type="text" placeholder="Marca Motor" id="shipMotorMarca" class="form-control"/>
+            </div>  
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipMotorPotencia">Potencia Motor</label>
+                <input ng-model="item.shipMotorPotencia" type="text" placeholder="Potencia Motor" id="shipMotorPotencia" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid">
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPesqueraRnp">RnP Pesquera</label>
+                <input ng-model="item.shipPesqueraRnp" type="text" placeholder="RnP Pesquera" id="shipPesqueraRnp" class="form-control"/>
+            </div>
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipRnp">RnP</label>
+                <input ng-model="item.shipRnp" type="text" placeholder="RnP" id="shipRnp" class="form-control"/>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipMatricula">Matricula</label>
+                <input ng-model="item.shipMatricula" type="text" placeholder="Matricula" id="shipMatricula" class="form-control"/>
+            </div>
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoCamaron">Permiso Camarón</label>
+                <input ng-model="item.shipPermisoCamaron" type="text" placeholder="Permiso Camarón" id="shipPermisoCamaron" class="form-control"/>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoCamaronExpedicion">Expedición Permiso Camarón</label>
+                <input ng-model="item.shipPermisoCamaronExpedicion" type="text" placeholder="Expedición Permiso Camarón" id="shipPermisoCamaronExpedicion" class="form-control"/>
+            </div> 
+            
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoCamaronVencimiento">Vencimiento Permiso Camarón</label>
+                <input ng-model="item.shipPermisoCamaronVencimiento" type="text" placeholder="Vencimiento Permiso Camarón" id="shipPermisoCamaronVencimiento" class="form-control"/>
+            </div>    
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoEscama">Permiso Escama</label>
+                <input ng-model="item.shipPermisoEscama" type="text" placeholder="Permiso Escama" id="shipPermisoEscama" class="form-control"/>
+            </div>  
+            
+             <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoEscamaExpedicion">Expedición Permiso Escama</label>
+                <input ng-model="item.shipPermisoEscamaExpedicion" type="text" placeholder="Expedición Permiso Escama" id="shipPermisoEscamaExpedicion" class="form-control"/>
+            </div> 
+        </div>
+    </div>
+    
+    <div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <label for="shipPermisoEscamaVencimiento">Vencimiento Permiso Escama</label>
+                <input ng-model="item.shipPermisoEscamaVencimiento" type="text" placeholder="Vencimiento Permiso Escama" id="shipPermisoEscamaVencimiento" class="form-control"/>
+            </div>  
+            
+        </div>
+    </div>  
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+            <div class="col-md-6 col-xs-12 col-sm-12 titulo">
+                <button ng-click="update(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">GUARDAR</button>
+            </div>   
+        </div>
+    </div>       
+
+</form>

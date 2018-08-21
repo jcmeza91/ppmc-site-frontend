@@ -1,0 +1,89 @@
+<div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
+    <div class="container-fluid"> 
+        <div class="col-md-10 col-xs-10 col-sm-10 intop">
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Alta de Viaje</label>        
+        </div>
+    </div>
+</div><br>
+
+
+<form id="registro-form2">    
+         
+    <div class="row content">
+        <div class="container-fluid">          
+            <div class="col-md-2 col-xs-6 col-sm-6 titulo">
+           	    <label for="tripShipId">BARCO</label><br>
+          	     <select ng-model='item.tripShipId' required ng-options='option.shipId as option.shipName for option in options1'></select>
+       	    </div>
+       		 
+       	    <div class="col-md-2 col-xs-6 col-sm-6 titulo">
+                <label for="tripDate">FECHA</label>
+                <input ng-model="item.tripDate" type="date" placeholder="Fecha" id="tripDate" class="form-control"/>
+            </div>
+            
+             <div class="col-md-2 col-xs-6 col-sm-6 titulo">
+                <br><button ng-click="add(item)" ng-disabled="!(!!item)" class="btn btn-sig pull-left" type="button">AGREGAR</button>
+            </div> 
+        </div>
+    </div>
+    
+    <br><br><div class="row content">
+        <div class="container-fluid"> 
+               
+        </div>
+    </div> 
+       
+</form>
+   
+    
+<table st-table="itemsList" st-safe-src="itemsList2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Barco</th>
+            <th>Fecha</th>
+            <th>
+               <button type="button" ng-click="add();" class="btn btn-sm btn-primary">
+                    <i class="glyphicon glyphicon-plus">Agregar</i>
+                </button> 
+            </th>
+        </tr>
+        
+        <tr>	
+            <th colspan="5">
+            <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
+            </th>
+        </tr>
+	</thead>
+	
+	<tbody>
+        <tr ng-repeat="x in itemsList">
+            <td>{{x.tripId}}</td>
+            <td>{{x.tripShipId}}</td>
+            <td>{{x.tripDate | date : "EEEE, MMMM d, y"}}</td>
+
+            <td>
+                <button type="button" ng-click="addCrew(x);" class="btn btn-sm btn-primary">
+                    <i >Tripulación</i>
+                </button>
+                
+                <button type="button" ng-click="addReport(x);" class="btn btn-sm btn-primary">
+                    <i >Reporte</i>
+                </button>
+
+                <button type="button" ng-click="delete(x,$index)" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </td>		
+        </tr>
+	</tbody>
+	
+
+	<tfoot>
+        <tr>
+            <td colspan="8" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="30"></div>
+            </td>
+        </tr>
+    </tfoot>	
+</table>

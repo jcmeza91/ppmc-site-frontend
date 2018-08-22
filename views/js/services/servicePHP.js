@@ -15,15 +15,15 @@ define(['angular'], function (angular) {
                                 headers: {
                                     Authorization: "Basic UFBNQy1BUEk6UFBNQy1BUEk="
                                 },
-							    url: "http://127.0.0.1:3000/api/1/" + serviceName,
-                                //url: "https://ppmctest2.appspot.com/api/1/" + serviceName,
+							    //url: "http://127.0.0.1:3000/api/1/" + serviceName,
+                                url: "https://ppmctest2.appspot.com/api/1/" + serviceName,
                                 data: parameters })
 								.then(function (response){
 									serviceAlert.hideloading();
                                     console.log(response);
                                     //console.log(response.status);
 								    if (response.status==200){// 1 = success php service
-                                        console.log("success");
+                                        response.statusText="OK";
 								    }
 								    else{ // 0 = error php service 
 								        serviceAlert.showAlert(response.data.msg); }

@@ -11,6 +11,7 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
+            <th>Comentario</th>
             <th>Fecha</th>
             <th>
                <button type="button" ng-click="add();" class="btn btn-sm btn-primary">
@@ -20,7 +21,7 @@
         </tr>
         
         <tr>	
-            <th colspan="4">
+            <th colspan="5">
             <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
             </th>
         </tr>
@@ -30,6 +31,7 @@
         <tr ng-repeat="x in itemsList">
             <td>{{x.seasonId}}</td>
             <td>{{x.seasonName}}</td>			
+            <td>{{x.seasonComments}}</td>			
             <td>{{x.seasonDate | date : "EEEE, MMMM d, y"}}</td>
 
             <td>

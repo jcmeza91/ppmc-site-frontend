@@ -23,8 +23,8 @@ define(function () {
                 //Get Invetory Detail
                 servicePHP.requestAPI(parameters,"inventoryDetail/"+$scope.item.inventoryId,"GET","Obteniendo registros").then(function(resp){
                     if (response.statusText=="OK"){
-                        $scope.itemsList=resp.data[0];
-                        $scope.itemsList2=resp.data[0];
+                        $scope.itemsList=resp.data;
+                        $scope.itemsList2=resp.data;
                     }		
                 }).catch(function (err) {// handle errors here if needed
                 });

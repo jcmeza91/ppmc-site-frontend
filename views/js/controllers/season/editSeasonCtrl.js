@@ -13,7 +13,6 @@ define(function () {
  
         //Funcion de editar, manda llamar el servicio de edicion para clientes.
     	$scope.update=function(parameters){
-            parameters.seasonDate = document.getElementById("seasonDate").value + "T12:00:00";
             servicePHP.requestAPI(parameters,"season/"+globalVariable.getIdItem(),"PUT","Actualizando Registro").then(function(response){
                 if (response.statusText=="OK"){
                     window.location.href = '#/temporadas';

@@ -30,7 +30,7 @@
         <tr ng-repeat="x in itemsList">
             <td>{{x.tripId}}</td>
             <td>{{x.tripShipId}}</td>
-            <td>{{x.tripDate}}</td>
+            <td>{{x.tripDate | date : "EEEE, MMMM d, y"}}</td>
 
             <td>
                 <button type="button" ng-click="edit(x);" class="btn btn-sm btn-primary">

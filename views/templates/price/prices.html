@@ -32,8 +32,8 @@
         <tr ng-repeat="x in itemsList">
             <td>{{x.priceId}}</td>
             <td>{{x.priceSpecieId}}</td>			
-            <td>{{x.pricePrice}}</td>
-            <td>{{x.priceDate}}</td>
+            <td>{{x.pricePrice | currency}}</td>
+            <td>{{x.priceDate | date : "EEEE, MMMM d, y"}}</td>
             <td>{{x.priceClientId}}</td>
 
             <td>

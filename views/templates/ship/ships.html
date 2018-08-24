@@ -1,10 +1,7 @@
 <div class="row header headerMain" style="margin-left: 0px; margin-right: 0px;">
     <div class="container-fluid"> 
         <div class="col-md-12 col-xs-12 col-sm-12 intop">
-            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Lista de Barcos&nbsp;&nbsp;&nbsp;</label>
-            <button type="button" ng-click="add();" class="btn btn-sm btn-primary">
-                    <i class="glyphicon glyphicon-plus">Agregar</i>
-            </button>         
+            <label for="cuando" style="padding-left: 4rem; padding-top: 1rem;">Lista de Barcos&nbsp;&nbsp;&nbsp;</label>        
         </div> 
     </div>
 </div><br>
@@ -15,7 +12,13 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Año</th>
-            <th>Eslora</th>
+            <th>Serie Motor</th>
+            <th>Modelo Motor</th>
+            <th>Matricula</th>
+            <th>Permiso Camarón</th>
+            <th>Permiso Escama</th>
+            
+            <!--<th>Eslora</th>
             <th>Manga</th>
             <th>Puntual</th>
             <th>Ton Brutas</th>
@@ -24,19 +27,14 @@
             <th>Cap Bodega</th>
             <th>Conservación</th>
             <th>Calado</th>
-            <th>Serie Motor</th>
-            <th>Modelo Motor</th>
             <th>Marca Motor</th>
             <th>Potencia Motor</th>
             <th>RnP Pesquera</th>
             <th>RnP</th>
-            <th>Matricula</th>
-            <th>Permiso Camarón</th>
             <th>Expedición Permiso Camarón</th>
             <th>Vencimiento Permiso Camarón</th>
-            <th>Permiso Escama</th>
             <th>Expedición Permiso Escama</th>
-            <th>Vencimiento Permiso Escama</th>
+            <th>Vencimiento Permiso Escama</th>-->
             <th>
                <button type="button" ng-click="add();" class="btn btn-sm btn-primary">
                     <i class="glyphicon glyphicon-plus">Agregar</i>
@@ -45,7 +43,7 @@
         </tr>
         
         <tr>	
-            <th colspan="26">
+            <th colspan="9">
             <input st-search="" class="input-sm form-control" placeholder="Buscador general..." type="text"/>
             </th>
         </tr>
@@ -54,9 +52,15 @@
 	<tbody>
         <tr ng-repeat="x in itemsList">
             <td>{{x.shipId}}</td>
-            <td>{{x.shipName}}</td>			
+            <td>{{x.shipName}}</td>	
             <td>{{x.shipAnoConstruccion}}</td>
-            <td>{{x.shipEslora}}</td>
+            <td>{{x.shipMotorSerie}}</td>			
+            <td>{{x.shipMotorModelo}}</td>		
+            <td>{{x.shipMatricula}}</td>				
+            <td>{{x.shipPermisoCamaron}}</td>
+            <td>{{x.shipPermisoEscama}}</td>								
+            
+            <!--<td>{{x.shipEslora}}</td>
             <td>{{x.shipManga}}</td>
             <td>{{x.shipPuntal}}</td>
             <td>{{x.shipTonBrutas}}</td>
@@ -65,19 +69,14 @@
             <td>{{x.shipCapBodega}}</td>
             <td>{{x.shipSisConservacion}}</td>
             <td>{{x.shipCalado}}</td>
-            <td>{{x.shipMotorSerie}}</td>			
-            <td>{{x.shipMotorModelo}}</td>
             <td>{{x.shipMotorMarca}}</td>
             <td>{{x.shipMotorPotencia}}</td>
             <td>{{x.shipPesqueraRnp}}</td>
             <td>{{x.shipRnp}}</td>
-            <td>{{x.shipMatricula}}</td>
-            <td>{{x.shipPermisoCamaron}}</td>
-            <td>{{x.shipPermisoCamaronExpedicion}}</td>
-            <td>{{x.shipPermisoCamaronVencimiento}}</td>
-            <td>{{x.shipPermisoEscama}}</td>
-            <td>{{x.shipPermisoEscamaExpedicion}}</td>			
-            <td>{{x.shipPermisoEscamaVencimiento}}</td>
+            <td>{{x.shipPermisoCamaronExpedicion | date : "EEEE, MMMM d, y"}}</td>
+            <td>{{x.shipPermisoCamaronVencimiento | date : "EEEE, MMMM d, y"}}</td>
+            <td>{{x.shipPermisoEscamaExpedicion | date : "EEEE, MMMM d, y"}}</td>			
+            <td>{{x.shipPermisoEscamaVencimiento | date : "EEEE, MMMM d, y"}}</td>-->
 
             <td>
                 <button type="button" ng-click="edit(x);" class="btn btn-sm btn-primary">

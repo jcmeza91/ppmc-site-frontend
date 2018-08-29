@@ -9,7 +9,9 @@ define(function () {
         servicePHP.requestAPI(parameters,"ship","GET",'').then(function(response){
             if (response.statusText=="OK"){
                 $scope.options1=response.data;
-                $scope.item = {tripShipId : $scope.options1[0].shipId}; 
+                $scope.actualDate=new Date();
+                $scope.item = {tripShipId : $scope.options1[0].shipId,
+                               tripDate : $scope.actualDate }; 
             }		
         }).catch(function (err) {// handle errors here if needed
         });
